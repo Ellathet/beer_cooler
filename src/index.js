@@ -4,7 +4,10 @@ const fs = require('fs');
 
 console.log(token);
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({
+	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
+	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+});
 
 const eventFiles = fs.readdirSync('./src/events').filter(file => file.endsWith('.js'));
 
