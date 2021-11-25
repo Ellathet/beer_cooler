@@ -6,7 +6,7 @@ module.exports = {
 	name: 'messageReactionRemove',
 	async execute(reaction, user) {
 
-		if (reaction.message.id === welcomeMessageId && !user.bot) {
+		if (reaction.message.id === welcomeMessageId() && !user.bot) {
 
 			const member = reaction.message.guild.members.cache.get(user.id);
 

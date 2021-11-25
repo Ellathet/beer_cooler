@@ -5,8 +5,8 @@ const experiences = require('../data/experiences');
 module.exports = {
 	name: 'messageReactionAdd',
 	async execute(reaction, user) {
-
-		if (reaction.message.id === welcomeMessageId && !user.bot) {
+		// Welcome inspect
+		if (reaction.message.id === await welcomeMessageId() && !user.bot) {
 
 			const member = reaction.message.guild.members.cache.get(user.id);
 
